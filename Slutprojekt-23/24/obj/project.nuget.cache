@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QYGYjUFroA0dPo0xncMmjvKUvFIW/bJONqMFtUHKbSIzEpvdSerov1rTTiu6KBLksD/A/EbL8Qhjts8qem0siA==",
+  "dgSpecHash": "tvJmB67nypgZ5CDKE5Z0XqonnwUI1yFJOi0aBe1h9tHC6vkauPb2HiddGcz05wYsTnlFRYkckeFzDoF6SDmRrw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ishaan.vepakomma\\Documents\\Programmering_1\\24\\Slutprojekt-23\\24\\24.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ishaan.vepakomma\\.nuget\\packages\\raylib-cs\\4.5.0.4\\raylib-cs.4.5.0.4.nupkg.sha512",
-    "C:\\Users\\ishaan.vepakomma\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\ishaan.vepakomma\\Documents\\Programmering_1\\Slutprojekt-p1\\Slutprojekt-23\\24\\24.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

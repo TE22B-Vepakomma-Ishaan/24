@@ -1,32 +1,24 @@
-﻿using System.Runtime.Intrinsics.X86;
-using Raylib_cs;
+﻿
 
+Console.WriteLine("Welcome to Big Lotto's Fun-tastic Fighting Function for Foolish Fiends!");
+System.Console.WriteLine("---");
+Console.WriteLine("what is your name?");
+string playerName = Console.ReadLine();
 
-Raylib.InitWindow (1200, 1000, "Slutprojekt");
-Raylib.SetTargetFPS(60);
-
-
-
-
-
-
-
-
-
-while(!Raylib.WindowShouldClose())
-{
-    
-
-
-
-    Raylib.BeginDrawing();
-
-    
-
-
-
-
-    Raylib.EndDrawing();
-
+if(playerName == ""){
+    System.Console.WriteLine("retype");
+    playerName = Console.ReadLine();
 }
+
+
+
+
+
+
+
+Console.ReadKey();
+
+
+
+
 
