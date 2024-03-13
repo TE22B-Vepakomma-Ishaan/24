@@ -1,25 +1,21 @@
-class EnemyStats{
 
-    string name;
-    int hp;
 
-    static public void EnemyStatsList(string[] args)
-    {
-        EnemyStats enemyOne = new();
-        enemyOne.name = "Martin";
-        enemyOne.hp = 100;
-        
-        EnemyStats enemyTwo = new();
-        enemyTwo.name = "Bartin";
-        enemyTwo.hp = 100;
+class EnemyLists{
 
-        EnemyStats enemyThree = new();
-        enemyThree.name = "Snake";
-        enemyThree.hp = 75;
+    public List<EnemyStatsVar> EnemyStats = new(){
+        new(){name = "Martin", hp = 100},
+        new(){name = "Bartin", hp = 100},
+        new(){name = "Snake", hp = 75},
+        new(){name = "Piston", hp = 150},
+    };
+    
 
-        EnemyStats enemyFour = new();
-        enemyFour.name = "Piston";
-        enemyFour.hp = 150;
+}
 
-    }
+class EnemyStatsVar{
+
+    public string name;
+    public int hp;
+
+
 }

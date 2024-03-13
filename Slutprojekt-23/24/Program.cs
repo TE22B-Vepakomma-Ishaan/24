@@ -1,7 +1,15 @@
-﻿
+﻿EnemyLists dk = new();
+
+
+
+
 
 Console.WriteLine("Announcer: Welcome to Big Lotto's Fun-tastic Fighting Function for Foolish Fiends!");
 System.Console.WriteLine("Our annual tournament is currently ongoing, deadline for application is in 1H 28min, would you like to apply for a position?");
+System.Console.WriteLine("");
+System.Console.WriteLine("a) Yes, I suppose. I have no purpose in this life anymore.. might as well gamble it all away.");
+System.Console.WriteLine("b) NO. I will not submit to your sick and twisted games! ---");
+console.ReadLine();
 
 
 Console.WriteLine("what is your name?");
