@@ -2,7 +2,7 @@
 
 class EnemyLists{
 
-    public List<EnemyStatsVar> EnemyStats = new(){
+    public List<Enemy> EnemyStats = new(){
         new(){name = "Martin", hp = 100},
         new(){name = "Bartin", hp = 100},
         new(){name = "Snake", hp = 75},
@@ -12,7 +12,8 @@ class EnemyLists{
 
 }
 
-class EnemyStatsVar{
+
+class Enemy{
 
     public string name;
     public int hp;
