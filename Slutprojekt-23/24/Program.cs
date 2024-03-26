@@ -8,8 +8,11 @@ namespace BigLottosTournament
             
             static void Main(string[] args)
             {
-                introInstance.Start();
+                introInstance.IsChallenging();
+                introInstance.NameSelect();
                 Console.ReadKey();
+
+                
             }
 
             

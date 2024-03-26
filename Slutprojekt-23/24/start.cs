@@ -5,20 +5,42 @@ namespace BigLottosTournament
     class Intro
     {
         public static Player currentPlayer = new();
-        public void Start()
+        public void IsChallenging()
             {
+
+                
+                
+
                 Console.WriteLine("Announcer: Welcome to Big Lotto's Fun-tastic Fighting Function for Foolish Fiends!");
                 System.Console.WriteLine("Our annual tournament is currently ongoing, deadline for application is in 1H 28min, would you like to apply for a position?");
                 System.Console.WriteLine("");
-                System.Console.WriteLine("a) Yes, I suppose. I have no purpose in this life anymore.. might as well gamble it all away.");
-                System.Console.WriteLine("b) NO. I will not submit to your sick and twisted games! ---");
-
-                string choice = Console.ReadLine();
+                System.Console.WriteLine("a) YES. I shall!! I will challenge the Man; no more will we be under his thumb!");
+            
+                            
+                string choice = Console.ReadLine().ToLower();;
                 
+                do
+                {
+                    
 
+                    if (choice == "a")
+                    {
+                        Console.WriteLine("okay!");
+                        
+                    }
 
+                    else
+                    {
+                        Console.WriteLine("Invalid choice. Please enter 'a' or 'b'."); 
+                        choice = Console.ReadLine().ToLower();
+                    }
+                } while ((choice != "a"));
 
-                System.Console.WriteLine("great! continue");
+            }
+
+        public void NameSelect()
+        {
+              System.Console.WriteLine("great! continue");
 
                 Console.WriteLine("what is your name?");
                 
@@ -53,9 +75,8 @@ namespace BigLottosTournament
 
 
                 System.Console.WriteLine($"Announcer: Welcome, {currentPlayer.name}, to the tournament! Your fight will begin in 30min, please spin the lotto to determine your sparring partner.");
-            }
+        }
 
-            
 
     }
 }
