@@ -75,6 +75,10 @@ namespace BigLottosTournament
 
 
                 System.Console.WriteLine($"Announcer: Welcome, {currentPlayer.name}, to the tournament! Your fight will begin in 30min, please spin the lotto to determine your sparring partner.");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("As you wait, ...");
+                
+
         }
 
 
