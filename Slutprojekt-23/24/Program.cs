@@ -9,10 +9,9 @@ namespace BigLottosTournament
             
             static void Main(string[] args)
             {
-                // enemyFunctions.enemyRandomize();
-
-                // introInstance.IsChallenging();
-                // introInstance.NameSelect();
+                introInstance.IsChallenging();
+                introInstance.NameSelect();
+                
 
                 Console.ReadKey();
 
