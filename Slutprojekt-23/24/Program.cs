@@ -5,13 +5,22 @@ namespace BigLottosTournament
         {
             public static Combatant currentPlayer = new();
             static Random random = new();
-
+            public static EnemyListSetup dx = new();
+        
             
             static void Main(string[] args)
-            {
-                // IsChallenging();
-                // NameSelect();
+            { 
+                EnemyListSetup.createEnemyList();
+                
+                // if(IsChallenging() == true)
+                // {
+                //     NameSelect();
+                //     enemySelection();
 
+                // }
+
+                
+                
 
                 Console.ReadKey();
 
@@ -25,10 +34,11 @@ namespace BigLottosTournament
                 string choice;
                 
 
-                Console.WriteLine("Announcer: Welcome to Big Lotto's Fun-tastic Fighting Function for Foolish Fiends!");
-                System.Console.WriteLine("Our annual tournament is currently ongoing, deadline for application is in 1H 28min, would you like to apply for a position?");
+                Console.WriteLine("Announcer: Welcome to Big Lotto's Fun-tastic Fighting Function!");
+                System.Console.WriteLine("Our annual tournament is about to start, deadline for application is in 48min, would you like to apply for a position?");
                 System.Console.WriteLine("");
                 System.Console.WriteLine("a) YES. I shall!! I will challenge the Man; no more will we be under his thumb!");
+                System.Console.WriteLine("b) NO. I will not partake in such foolish activities.I will leave.");
             
                             
                 
@@ -44,11 +54,11 @@ namespace BigLottosTournament
 
                 if(choice == "a"){
                     
-                    System.Console.WriteLine("okay");
+                    System.Console.WriteLine("okay CONTINUE");
                     return true;
                 }
                 else{
-                    System.Console.WriteLine("bye");
+                    System.Console.WriteLine("Announcer: Very well then! leave");
                     return false;
                 }
             }
@@ -69,6 +79,7 @@ namespace BigLottosTournament
                     if (currentPlayer.name == "")
                     {
                         System.Console.WriteLine("Announcer: If you continue to joke, security will be called. Big Lotto's establishment will not be sullied.");
+                        Console.ReadKey();
                         System.Console.WriteLine("");
                         System.Console.WriteLine("System: Current security on duty: Vannessa.");
                         System.Console.WriteLine("Time employed: 2years 7months 13days");
@@ -92,10 +103,25 @@ namespace BigLottosTournament
                 System.Console.WriteLine($"Announcer: Welcome, {currentPlayer.name}, to the tournament! Your fight will begin in 30min, please spin the lotto to determine your sparring partner.");
                 System.Console.WriteLine("");
                 System.Console.WriteLine("As you wait, ...");
+                Console.ReadKey();
         }
 
 
+        static void enemySelection(){
+            
+            int index = random.Next(EnemyListSetup.EnemiesList.Count);
+
+            var firstEnemy = EnemyListSetup.EnemiesList[index];
+            System.Console.WriteLine("Announcer: Greetings dear ladies and gentlefreaks, the first round of the annual [name] tournament will begin!");
+            System.Console.WriteLine($"To start us off, the first fight will be between the fan favorite, {firstEnemy.name}, versus the never before heard: {currentPlayer.name}!!");
+             
+            
+
+        }
+
         
+
+
 
 
         

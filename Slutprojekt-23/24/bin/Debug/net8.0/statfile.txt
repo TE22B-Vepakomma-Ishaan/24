@@ -1,4 +1,5 @@
+Player,100,punch,5,20,1,kick,10,30,2,Crane strike,20,45,5,block,0,0,3
 Martin,100,punch,5,20,1,kick,10,30,2,A brother's love,35,35,5,block,0,0,3
 Bartin,110,punch,5,20,1,kick,10,30,2,A brother's love,35,35,5,block,0,0,3
-Snake,85,punch,1,15,kick,20,40,jab,20,30,block,0,0,3
-Piston,150,punch,15,30,kick,0,15,smash,40,50,block,0,0,3
+Snake,85,punch,1,15,1,kick,20,40,2,jab,20,30,3,block,0,0,3
+Piston,150,punch,15,30,2,kick,0,15,2,smash,40,50,4,block,0,0,3

@@ -26,17 +26,36 @@ namespace BigLottosTournament
         public int moveCost;
         
     }
+
+    public class PlayerInformation
+    {
+        
+
+    }
       
     public class EnemyListSetup
     {
         public static List<Combatant> EnemiesList = new();
         public static void createEnemyList(){
-        string EnemyStats = "statfile.txt";
-        string[] lines = File.ReadAllLines(EnemyStats);
+        string[] lines = File.ReadAllLines("statfile.txt");
+        int i = 1;
         foreach (string line in lines)
         {
             string[] combatantEntry = line.Split(",");
 
+            if(i == 1)
+            {
+                Program.currentPlayer.name = combatantEntry[0];
+                Program.currentPlayer.hp = int.Parse(combatantEntry[1]);
+                Program.currentPlayer.moves = new(){
+                new(){attackName = combatantEntry[2], minDamage = int.Parse(combatantEntry[3]),maxDamage = int.Parse(combatantEntry[4]), moveCost = int.Parse(combatantEntry[5]), moveTotal = 5},
+                new(){attackName = combatantEntry[6], minDamage = int.Parse(combatantEntry[7]),maxDamage = int.Parse(combatantEntry[8]), moveCost = int.Parse(combatantEntry[9]), moveTotal = 5},
+               new(){attackName = combatantEntry[10], minDamage = int.Parse(combatantEntry[11]),maxDamage = int.Parse(combatantEntry[12]), moveCost = int.Parse(combatantEntry[13]), moveTotal = 5},
+               new(){attackName = combatantEntry[14], minDamage = int.Parse(combatantEntry[15]),maxDamage = int.Parse(combatantEntry[16]), moveCost = int.Parse(combatantEntry[17]), moveTotal = 5},
+            };
+
+            i = 0;
+            }
             Combatant newCombatant = new(){name = combatantEntry[0], hp = int.Parse(combatantEntry[1]),
              moves = new(){
                 new(){attackName = combatantEntry[2], minDamage = int.Parse(combatantEntry[3]),maxDamage = int.Parse(combatantEntry[4]), moveCost = int.Parse(combatantEntry[5]), moveTotal = 5},
