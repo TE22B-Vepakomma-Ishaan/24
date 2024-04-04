@@ -5,22 +5,26 @@ namespace BigLottosTournament
         {
             public static Combatant currentPlayer = new();
             static Random random = new();
-            public static EnemyListSetup dx = new();
-        
+            public static FightingSystem fightingSystem = new();
+
+            
             
             static void Main(string[] args)
             { 
+
                 EnemyListSetup.createEnemyList();
                 
-                // if(IsChallenging() == true)
-                // {
-                //     NameSelect();
-                //     enemySelection();
+                if(IsChallenging() == true)
+                {
+                    NameSelect();
+                    fightingSystem.currentPlayer = currentPlayer;
 
-                // }
+                    enemySelection();
+                }
 
-                
-                
+                fightingSystem.combatScene();
+
+
 
                 Console.ReadKey();
 
@@ -110,16 +114,34 @@ namespace BigLottosTournament
         static void enemySelection(){
             
             int index = random.Next(EnemyListSetup.EnemiesList.Count);
+            int indexTwo;
+
+            do
+            {
+            
+                indexTwo = random.Next(EnemyListSetup.EnemiesList.Count);
+                
+            } while (indexTwo == index);
+
+
 
             var firstEnemy = EnemyListSetup.EnemiesList[index];
+            var secondEnemy = EnemyListSetup.EnemiesList[indexTwo];
+            fightingSystem.selectedEnemies.Add(firstEnemy);
+            fightingSystem.selectedEnemies.Add(secondEnemy);
+
             System.Console.WriteLine("Announcer: Greetings dear ladies and gentlefreaks, the first round of the annual [name] tournament will begin!");
             System.Console.WriteLine($"To start us off, the first fight will be between the fan favorite, {firstEnemy.name}, versus the never before heard: {currentPlayer.name}!!");
-             
+            Console.ReadKey();
+
+
             
 
         }
 
         
+
+
 
 
 

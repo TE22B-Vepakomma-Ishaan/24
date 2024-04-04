@@ -27,11 +27,6 @@ namespace BigLottosTournament
         
     }
 
-    public class PlayerInformation
-    {
-        
-
-    }
       
     public class EnemyListSetup
     {
@@ -56,37 +51,25 @@ namespace BigLottosTournament
 
             i = 0;
             }
+            else{
+
             Combatant newCombatant = new(){name = combatantEntry[0], hp = int.Parse(combatantEntry[1]),
              moves = new(){
                 new(){attackName = combatantEntry[2], minDamage = int.Parse(combatantEntry[3]),maxDamage = int.Parse(combatantEntry[4]), moveCost = int.Parse(combatantEntry[5]), moveTotal = 5},
                 new(){attackName = combatantEntry[6], minDamage = int.Parse(combatantEntry[7]),maxDamage = int.Parse(combatantEntry[8]), moveCost = int.Parse(combatantEntry[9]), moveTotal = 5},
                new(){attackName = combatantEntry[10], minDamage = int.Parse(combatantEntry[11]),maxDamage = int.Parse(combatantEntry[12]), moveCost = int.Parse(combatantEntry[13]), moveTotal = 5},
                new(){attackName = combatantEntry[14], minDamage = int.Parse(combatantEntry[15]),maxDamage = int.Parse(combatantEntry[16]), moveCost = int.Parse(combatantEntry[17]), moveTotal = 5},
+                }
+                };
+                EnemiesList.Add(newCombatant);
             }
-            };
 
-            EnemiesList.Add(newCombatant);
 
         }
 
         }
 
     }
-
-
-        // public static Random random = new();
-        // public static int getRandomDamage(int minDamage, int maxDamage)
-        // {
-        //     return random.Next(minDamage, maxDamage + 1);
-        // }
-
-        //  public static void PerformRandomAttack(Combatant enemy)
-        // {
-        //     Moveset randomMove = enemy.moves[random.Next(enemy.moves.Count)]; 
-        //     int damage = getRandomDamage(randomMove.minDamage, randomMove.maxDamage);
-            
-        //     Console.WriteLine($"{enemy.name} used {randomMove.attackName} and dealt {damage} damage.");
-        // }
 
 
 
