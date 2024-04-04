@@ -31,19 +31,19 @@ namespace BigLottosTournament{
             System.Console.WriteLine("");
             System.Console.WriteLine("");
             System.Console.WriteLine("Please select your move");
-            Console.WriteLine("+-----------------------------------+");
-            Console.WriteLine("|                 |                 |");
-            Console.WriteLine($"| 1) {currentPlayer.moves[0].attackName}        | 2) {currentPlayer.moves[1].attackName}         |");
-            Console.WriteLine($"| Cost: {currentPlayer.moves[0].moveCost}         | Cost: {currentPlayer.moves[1].moveCost}        |");
-            Console.WriteLine($"| Total:   {currentPlayer.moves[0].moveTotal}/5       | Total: {currentPlayer.moves[1].moveTotal,-2}/5      |");
-            Console.WriteLine("|                 |                 |");
-            Console.WriteLine("+-----------------+-----------------+");
-            Console.WriteLine("|                 |                 |");
-            Console.WriteLine($"| 1) {currentPlayer.moves[2].attackName} | 2) {currentPlayer.moves[3].attackName}        |");
-             Console.WriteLine($"| Cost: {currentPlayer.moves[2].moveCost}         | Cost: {currentPlayer.moves[3].moveCost}        |");
-            Console.WriteLine($"| Total:   {currentPlayer.moves[2].moveTotal}/5       | Total: {currentPlayer.moves[3].moveTotal,-2}/5      |");
-            Console.WriteLine("|                 |                 |");
-            Console.WriteLine("+-----------------------------------+");
+            Console.WriteLine("-+--------------------------------------+--------------------------------------+-");
+            Console.WriteLine(" |				   	|				       |");
+            Console.WriteLine($" |  1) {currentPlayer.moves[0].attackName}	  	  ({currentPlayer.moves[0].minDamage}-{currentPlayer.moves[0].maxDamage})        |  2) {currentPlayer.moves[1].attackName}	     	({currentPlayer.moves[1].minDamage}-{currentPlayer.moves[1].maxDamage})        |");
+            Console.WriteLine(" |				   	|		       		       |");
+            Console.WriteLine($" |        Cost: {currentPlayer.moves[0].moveCost}     Total: {currentPlayer.moves[0].moveTotal}/5       	|	 Cost: {currentPlayer.moves[1].moveCost}     Total: {currentPlayer.moves[1].moveTotal}/5	       |");
+            Console.WriteLine(" |				   	|		       		       |");
+            Console.WriteLine("-+--------------------------------------¤--------------------------------------+-");
+            Console.WriteLine(" |				   	|				       |");
+            Console.WriteLine($" |  3) {currentPlayer.moves[2].attackName} 	 ({currentPlayer.moves[2].minDamage}-{currentPlayer.moves[2].maxDamage})        |  4) {currentPlayer.moves[3].attackName}	     	  ({currentPlayer.moves[3].minDamage}-{currentPlayer.moves[3].maxDamage})        |");
+            Console.WriteLine(" |				   	|				       |");
+             Console.WriteLine($" |        Cost: {currentPlayer.moves[2].moveCost}     Total: {currentPlayer.moves[2].moveTotal}/5       	|	 Cost: {currentPlayer.moves[3].moveCost}     Total: {currentPlayer.moves[3].moveTotal}/5	       |");
+            Console.WriteLine(" |				   	|				       |");
+            Console.WriteLine("-+--------------------------------------+--------------------------------------+-");
            
            int enemyDamageDealt;
            bool enemyIsBlocking;
@@ -83,6 +83,7 @@ namespace BigLottosTournament{
 
                 currentPlayer.hp = 100;
                 currentEnemyIndex++;
+                round = 1;
             }
 
 
