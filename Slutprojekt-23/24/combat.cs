@@ -8,6 +8,7 @@ namespace BigLottosTournament{
 
         public Combatant currentPlayer = new();
 
+
         public void combatScene(){
 
             int currentEnemyIndex = 0;
@@ -25,6 +26,8 @@ namespace BigLottosTournament{
 
             System.Console.WriteLine("---------------------------------------------------------------------------------------------------");
             System.Console.WriteLine($"Round {round} begins!"); 
+            System.Console.WriteLine("");
+            System.Console.WriteLine($"Your opponent is: {currentEnemy.name}");
             System.Console.WriteLine("");
             System.Console.WriteLine($"Player health: {currentPlayer.hp}");
             System.Console.WriteLine($"Enemy health:  {currentEnemy.hp}");
@@ -44,6 +47,8 @@ namespace BigLottosTournament{
              Console.WriteLine($" |        Cost: {currentPlayer.moves[2].moveCost}     Total: {currentPlayer.moves[2].moveTotal}/5       	|	 Cost: {currentPlayer.moves[3].moveCost}     Total: {currentPlayer.moves[3].moveTotal}/5	       |");
             Console.WriteLine(" |				   	|				       |");
             Console.WriteLine("-+--------------------------------------+--------------------------------------+-");
+            System.Console.WriteLine("");
+            System.Console.WriteLine("(Tip: Each attack can do a range of damage displayed next next to its name. Additionally, each move costs energy to spend which can only recharge by resting that attack. You must rely on your luck as well as your mind to win.)");
            
            int enemyDamageDealt;
            bool enemyIsBlocking;
@@ -79,16 +84,22 @@ namespace BigLottosTournament{
             
             if(currentEnemy.hp <= 0){
 
-                System.Console.WriteLine($"{currentEnemy.name} has been knocked down! {currentPlayer.name} has won!!");
+                System.Console.WriteLine($"Announcer: {currentEnemy.name} has been knocked down! {currentPlayer.name} has won!!");
+                Program.SecondFight();
+            
 
                 currentPlayer.hp = 100;
                 currentEnemyIndex++;
-                round = 1;
+                round = 0;
             }
 
-
-    
-
+            if(!isPlayerAlive())
+            {
+                System.Console.WriteLine("Announcer: yikes! It seems our underdog will remain under. Let's hope they can continue to walk after that beatdown.");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("You feel your body ache in pain as you lie on the ground. Your feeble mission has come to an end, and all you can show for it is a bruised frame.");
+                
+            }
 
             round++;
             Console.ReadKey();

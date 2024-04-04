@@ -14,24 +14,27 @@ namespace BigLottosTournament
 
                 EnemyListSetup.createEnemyList();
                 
-                // if(IsChallenging() == true)
-                // {
-                //     NameSelect();
-                //     fightingSystem.currentPlayer = currentPlayer;
+                if(IsChallenging() == true)
+                {
+                    NameSelect();
+                    fightingSystem.currentPlayer = currentPlayer;
 
-                //     enemySelection();
-                // }
-                fightingSystem.currentPlayer = currentPlayer;
-                enemySelection();
-                fightingSystem.combatScene();
-
-
-
-                Console.ReadKey();
+                    enemySelection();
+                    fightingSystem.combatScene();
+                    if(fightingSystem.isPlayerAlive())
+                    {
+                        AfterFight();
+                    }
+                }
+                // fightingSystem.currentPlayer = currentPlayer;
+                // enemySelection();
+                // fightingSystem.combatScene();
 
                 
             }
             
+
+            // All story related code goes here-------------------------------
 
         static bool IsChallenging()
             {
@@ -139,7 +142,20 @@ namespace BigLottosTournament
             
 
         }
+        
+        public static void SecondFight(){
 
+            System.Console.WriteLine($"Announcer: AMAZING PERFORMANCE, it seems we have an underdog in our midst!! {currentPlayer.name} has taken down {fightingSystem.selectedEnemies[0].name} valiantly and will shortly move on the the semi-finals!!");
+            System.Console.WriteLine($"The semi-finals will begin shortly where our new hero will face last year's champion, {fightingSystem.selectedEnemies[1].name}! This is sure to be an exhilarating match!");
+            System.Console.WriteLine("(note: this is the same as our modern day finals. In respect, or fear, of Big Lotto, tournaments are prohibited of using the the term 'finals' or 'finale' as such success and status is seen as a mockery of their ruler Big Lotto)");
+
+        }
+
+        static void AfterFight(){
+
+
+
+        }
         
 
 
