@@ -14,14 +14,15 @@ namespace BigLottosTournament
 
                 EnemyListSetup.createEnemyList();
                 
-                if(IsChallenging() == true)
-                {
-                    NameSelect();
-                    fightingSystem.currentPlayer = currentPlayer;
+                // if(IsChallenging() == true)
+                // {
+                //     NameSelect();
+                //     fightingSystem.currentPlayer = currentPlayer;
 
-                    enemySelection();
-                }
-
+                //     enemySelection();
+                // }
+                fightingSystem.currentPlayer = currentPlayer;
+                enemySelection();
                 fightingSystem.combatScene();
 
 
