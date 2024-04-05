@@ -77,6 +77,8 @@ namespace BigLottosTournament{
                 enemyDamageDealt = 0;
 
             }
+
+            Console.ReadKey();
            currentPlayer.hp -= enemyDamageDealt;
             currentEnemy.hp -= playerDamageDealt; 
 
@@ -91,6 +93,10 @@ namespace BigLottosTournament{
                 currentPlayer.hp = 100;
                 currentEnemyIndex++;
                 round = 0;
+                foreach (var move in currentPlayer.moves)
+                {
+                    move.moveTotal = 5;
+                }
             }
 
             if(!isPlayerAlive())
