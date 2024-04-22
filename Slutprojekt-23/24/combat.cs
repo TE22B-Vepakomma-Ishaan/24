@@ -13,6 +13,7 @@ namespace BigLottosTournament{
 
             int currentEnemyIndex = 0;
             int round = 1;
+            int z = 1;
 
 
            while (currentPlayer.hp > 0 && currentEnemyIndex < selectedEnemies.Count)
@@ -81,13 +82,20 @@ namespace BigLottosTournament{
             Console.ReadKey();
            currentPlayer.hp -= enemyDamageDealt;
             currentEnemy.hp -= playerDamageDealt; 
-
+            
             
             
             if(currentEnemy.hp <= 0){
 
                 System.Console.WriteLine($"Announcer: {currentEnemy.name} has been knocked down! {currentPlayer.name} has won!!");
-                Program.SecondFight();
+
+                if(z == 1)
+                {
+                     Program.SecondFight();
+                    z = 0;   
+                
+                }
+            
             
 
                 currentPlayer.hp = 100;
@@ -99,6 +107,7 @@ namespace BigLottosTournament{
                 }
             }
 
+           
             if(!isPlayerAlive())
             {
                 System.Console.WriteLine("Announcer: yikes! It seems our underdog will remain under. Let's hope they can continue to walk after that beatdown.");

@@ -179,12 +179,36 @@ namespace BigLottosTournament
             System.Console.WriteLine("a) Submit to these feelings. Let your rage consume you.");
             System.Console.WriteLine("b) Resist with all your might. This is not the time.");
 
-            
+             string choice = Console.ReadLine();
+             do
+                {
+                    choice = Console.ReadLine().ToLower();;
+                    if((choice != "a" && choice != "b")){
+                        System.Console.WriteLine("pick a or b");
+
+                    }
+                    
+                } while ((choice != "a" && choice != "b"));
+
+            if(choice == "a")
+            {
+                EndingOne();
+            }
+
+            if(choice == "b")
+            {
+                EndingTwo();
+            }
+
         }
         
+        static void EndingOne(){
+            
+        }
 
+        static void EndingTwo(){
 
-
+        }
 
 
 
