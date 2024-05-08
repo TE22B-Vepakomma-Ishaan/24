@@ -6,6 +6,8 @@ using Microsoft.VisualBasic;
 namespace BigLottosTournament
 {
 
+// all data classes, simply creates all the variables used for each class.
+
     public class Combatant
     {
 
@@ -26,11 +28,16 @@ namespace BigLottosTournament
         public int moveCost;
         
     }
-
+//----------------------------------------------------------------
       
+
+
+
+//class anf function for creating all the enemies (and player)
     public class EnemyListSetup
     {
         public static List<Combatant> EnemiesList = new();
+
         public static void createEnemyList(){
         string[] lines = File.ReadAllLines("statfile.txt");
         int i = 1;
@@ -38,6 +45,7 @@ namespace BigLottosTournament
         {
             string[] combatantEntry = line.Split(",");
 
+            // specifically the player stats underneath
             if(i == 1)
             {
                 Program.currentPlayer.name = combatantEntry[0];
@@ -51,6 +59,8 @@ namespace BigLottosTournament
 
             i = 0;
             }
+
+            //the enemies stats 
             else{
 
             Combatant newCombatant = new(){name = combatantEntry[0], hp = int.Parse(combatantEntry[1]),

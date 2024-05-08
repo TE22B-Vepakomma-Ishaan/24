@@ -1,6 +1,10 @@
 ﻿
 namespace BigLottosTournament
 {
+    //----List over array reasoning------------------------------
+
+    // all containers used in my code is a List<> because we were told in class that arrays are meant to have fixed limits when making it. I assumed it to mean that one could not add items to an array after its initial creation, therefore i used lists. Furthermore, although i initially wanted to use arrays for most, if not all, containers in my code, using lists allows me (and any player with access to the code) to easily and manually add and delete enemies and moves. Although ideally, having the moveset list being an array instead to cap out at 4 moves while keep the rest dynamic would be the ideal scenario. The usage of lists as i have done, allows other to more easily take and modify my system to their specific needs without having to know too much coding.
+    
     class Program
         {
             public static Combatant currentPlayer = new();
@@ -26,10 +30,6 @@ namespace BigLottosTournament
                         AfterFight();
                     }
                 }
-                // fightingSystem.currentPlayer = currentPlayer;
-                // enemySelection();
-                // fightingSystem.combatScene();
-
                 
             }
             
@@ -125,7 +125,7 @@ namespace BigLottosTournament
 
         }
 
-
+    //enemy picker
         static void enemySelection(){
             
             int index = random.Next(EnemyListSetup.EnemiesList.Count);
@@ -202,6 +202,7 @@ namespace BigLottosTournament
 
         }
         
+
         static void EndingOne(){
             
         }

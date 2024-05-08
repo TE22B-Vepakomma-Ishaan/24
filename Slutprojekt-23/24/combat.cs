@@ -2,6 +2,8 @@ namespace BigLottosTournament{
 
     public class FightingSystem{
 
+
+        //all instances
         public static Random random = new();
 
         public List<Combatant> selectedEnemies = new();
@@ -11,10 +13,14 @@ namespace BigLottosTournament{
 
         public void combatScene(){
 
+            //static values outside loop- keeps loop from repeating certain lines.
             int currentEnemyIndex = 0;
             int round = 1;
             int z = 1;
+            int playerHealthTotal = currentPlayer.hp;
 
+
+//main combat loop
 
            while (currentPlayer.hp > 0 && currentEnemyIndex < selectedEnemies.Count)
            {
@@ -61,6 +67,8 @@ namespace BigLottosTournament{
 
             playerDamageDealt = PlayerAttack(out playerIsBlocking);
            enemyDamageDealt = EnemyRandomAttack(currentEnemy, out enemyIsBlocking);
+
+           //if loops to check if damage is nullified. 
             if (enemyIsBlocking){
                 if(playerDamageDealt > 0)
                 {
@@ -85,6 +93,7 @@ namespace BigLottosTournament{
             
             
             
+           //if loop to initiate the second fight, only occurs when the first fight has been won. 
             if(currentEnemy.hp <= 0){
 
                 System.Console.WriteLine($"Announcer: {currentEnemy.name} has been knocked down! {currentPlayer.name} has won!!");
@@ -96,9 +105,8 @@ namespace BigLottosTournament{
                 
                 }
             
-            
-
-                currentPlayer.hp = 100;
+                //resets all player data to max + switches enemy
+                currentPlayer.hp = playerHealthTotal;
                 currentEnemyIndex++;
                 round = 0;
                 foreach (var move in currentPlayer.moves)
@@ -108,6 +116,7 @@ namespace BigLottosTournament{
             }
 
            
+           //check if player is alive
             if(!isPlayerAlive())
             {
                 System.Console.WriteLine("Announcer: yikes! It seems our underdog will remain under. Let's hope they can continue to walk after that beatdown.");
@@ -136,6 +145,7 @@ namespace BigLottosTournament{
         }
         
 
+//move selection- player
         public int getValidMove()
         {
             int choice;
@@ -198,6 +208,8 @@ namespace BigLottosTournament{
             return damage;
         }
 
+
+//move selection- enemy
         public int EnemyRandomAttack(Combatant enemy, out bool enemyIsBlocking)
         {
 
